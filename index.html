@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poké OS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="desktop">
+    <div class="desktop-grid">
+      <div class="desktop-icon" onclick="openWindow('pokedex-win')">
+        <div class="icon-avatar dex-icon">🔴</div>
+        <span>Pokédex</span>
+      </div>
+      <div class="desktop-icon" onclick="openWindow('battle-win')">
+        <div class="icon-avatar battle-icon">⚔️</div>
+        <span>Battle Arena</span>
+      </div>
+      <div class="desktop-icon" onclick="openWindow('pc-win')">
+        <div class="icon-avatar pc-icon">💻</div>
+        <span>Bill's PC</span>
+      </div>
+    </div>
+    <div class="window" id="pokedex-win">
+      <div class="window-header">
+        <div class="win-title">🔴 Offline Pokédex</div>
+        <div class="win-controls">
+          <button class="win-btn close" onclick="closeWindow('pokedex-win')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="dex-search-bar">
+          <select id="dex-select" onchange="renderPokemonDetails()">
+          </select>
+        </div>
+        <div id="dex-result" class="dex-display">
+        </div>
+      </div>
+    </div>
+
+    <div class="window" id="battle-win">
+      <div class="window-header">
+        <div class="win-title">⚔️ Stadium Mini-Battle</div>
+        <div class="win-controls">
+          <button class="win-btn close" onclick="closeWindow('battle-win')"></button>
+        </div>
+      </div>
+      <div class="window-body battle-arena">
+        <div class="combatant-zone opponent-zone">
+          <div class="hp-plate">
+            <span class="name">Gengar</span>
+            <div class="hp-bar-bg"><div id="enemy-hp" class="hp-fill"></div></div>
+          </div>
+          <div id="enemy-sprite" class="retro-sprite">👻</div>
+        </div>
+
+        <div class="combatant-zone player-zone">
+          <div id="player-sprite" class="retro-sprite">⚡</div>
+          <div class="hp-plate">
+            <span class="name">Pikachu</span>
+            <div class="hp-bar-bg"><div id="player-hp" class="hp-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="battle-ui">
+          <div id="battle-dialogue">A wild Gengar appeared! Choose an action:</div>
+          <div class="move-grid">
+            <button onclick="battleAction('Thunderbolt', 35)">⚡ Thunderbolt</button>
+            <button onclick="battleAction('Quick Attack', 20)">💨 Quick Attack</button>
+            <button onclick="battleAction('Iron Tail', 30)">🔩 Iron Tail</button>
+            <button onclick="resetBattle()">🔄 Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="window" id="pc-win">
+      <div class="window-header">
+        <div class="win-title">💻 Bill's Pokémon Storage System</div>
+        <div class="win-controls">
+          <button class="win-btn close" onclick="closeWindow('pc-win')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="pc-intro">Box 1 : Local Party Storage</div>
+        <div class="pc-grid" id="pc-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="taskbar">
+    <div class="start-button">
+      <div class="pokeball-mini"></div>
+      <span>Poké OS</span>
+    </div>
+    <div class="taskbar-apps">
+      <button class="task-tab" onclick="openWindow('pokedex-win')">Pokédex</button>
+      <button class="task-tab" onclick="openWindow('battle-win')">Stadium</button>
+      <button class="task-tab" onclick="openWindow('pc-win')">Bill's PC</button>
+    </div>
+    <div id="clock">12:00 PM</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
