@@ -36,3 +36,8 @@ poke-os/
 
 
 ![alt text](image.png)
+
+## How to run locally 
+1. Download or clone this folder.
+2. Make sure `index.html`, `styles.css`, and `script.js` are in the same directory.
+3. Double-click `index.html` to open it in Chrome or any browser.
