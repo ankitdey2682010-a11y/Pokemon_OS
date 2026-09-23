@@ -23,13 +23,16 @@ A Pokemon-themed web operating system built entirely with web technologies HTML 
 
 * **HTML** 
 * **CSS** 
-* **JavaScript ** 
+* **JavaScript** 
 
 ## Project Structure
 
 poke-os/
 │
-├── index.html        # Main OS and window templates
-├── styles.css        # Theme variables, layouts, and aesthetics
-├── script.js         # Window manager, battle logic, and local database
-└── background.png    # Desktop wallpaper asset
+├── index.html        
+├── styles.css       
+├── script.js       
+└── background.png   
+
+
+![alt text](image.png)
